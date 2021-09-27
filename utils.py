@@ -15,7 +15,7 @@ def load_matched_state_dict(model, state_dict, print_stats=True):
         if key in state_dict and curr_state_dict[key].shape == state_dict[key].shape:
             curr_state_dict[key] = state_dict[key]
             num_matched += 1
-    model.load_state_dict(curr_state_dict)
+    model.state_dict(curr_state_dict)
     if print_stats:
         print(f'Loaded state_dict: {num_matched}/{num_total} matched')
 
